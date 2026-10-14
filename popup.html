@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gladiatus Bot</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>Gladiatus Bot</h1>
+  <p id="status" role="status">Sayfaya bağlanılıyor…</p>
+  <label for="interval">Kontrol aralığı (saniye)</label>
+  <input id="interval" type="number" min="3" max="300" value="10">
+  <div class="actions">
+    <button id="both-start" disabled>İkisini başlat</button>
+    <button id="all-stop" disabled>Tümünü durdur</button>
+  </div>
+  <p id="queue-status" role="status">Seçimleri kaydet.</p>
+  <label for="opponent">Rakip (sayfadaki normal saldırı sırası)</label>
+  <select id="opponent"><option value="">Önce keşif bölgesini aç</option></select>
+  <div class="actions">
+    <button id="expedition-save" disabled>Keşfi kaydet</button>
+    <button id="start" disabled>Keşfi başlat</button>
+    <button id="stop" disabled>Keşfi durdur</button>
+    <button id="inspect" disabled>Sayfayı oku</button>
+  </div>
+  <h2>Otomatik zindan</h2>
+  <p id="dungeon-status" role="status">Zindan durduruldu.</p>
+  <label for="difficulty">Zorluk</label>
+  <select id="difficulty"><option value="dif1">Normal</option><option value="dif2">İleri</option></select>
+  <div class="actions">
+    <button id="dungeon-save" disabled>Zindanı kaydet</button>
+    <button id="dungeon-start" disabled>Zindanı başlat</button>
+    <button id="dungeon-stop" disabled>Zindanı durdur</button>
+  </div>
+  <p class="hint">İstediğin zindanın sayfasını açıp başlat. Sıradaki rakiple savaşır; zindan tamamlanınca seçtiğin zorlukta yeniden girer.</p>
+  <p class="hint">Keşif bölgesini aç, rakibi seç ve başlat. Puan varsa ve bekleme bittiyse saldırır. Aynı sekmede sayfa değişse de devam eder.</p>
+  <p class="hint">Birlikte çalıştırmak için önce keşif sayfasında rakibi, sonra zindan sayfasında zorluğu kaydet. İkisini başlat: Keşif → Zindan. Hazır olmayan görev bekler, diğeri devam eder.</p>
+  <pre id="snapshot">—</pre>
+  <h2>İşlem günlüğü</h2>
+  <pre id="logs" aria-live="polite">—</pre>
+  <script src="popup.js"></script>
+</body>
+</html>
